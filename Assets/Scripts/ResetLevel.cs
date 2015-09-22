@@ -5,6 +5,7 @@ public class ResetLevel : MonoBehaviour {
 
 	public GameObject cubert;
 	private Rigidbody rgdbdyTarget;
+	public PhysicMaterial none;
 
 	void Start () {
 		rgdbdyTarget = cubert.GetComponent<Rigidbody>();
@@ -13,7 +14,9 @@ public class ResetLevel : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider character) {
 		if (character.attachedRigidbody == rgdbdyTarget) {
-			Application.LoadLevel ("TopDownLevel");
+			CubertMoveAgain.powerPhys = none;
+			CubertMoveAgain.isIce = false;
+			Application.LoadLevel ("Cubert_Choice");
 		}
 	}
 	

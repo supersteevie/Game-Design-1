@@ -20,6 +20,7 @@ public class CameraFollows : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		newPos = target.position + posAmnt;
-		transform.position = Vector3.Lerp (transform.position, newPos, smoothAmnt); 
+		transform.position = Vector3.Lerp (transform.position, newPos, smoothAmnt);
+		transform.LookAt(target.position);
 	}
 }
